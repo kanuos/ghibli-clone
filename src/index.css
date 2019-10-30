@@ -6,12 +6,14 @@
   --muted: #A4A4A4;
   --green: #4ED758;
   --white-shadow: #fafafa;
+  --black-shadow: #222222;
 }
 
 *,*::after,*::before{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', 'Roboto';
 }
 
 html{

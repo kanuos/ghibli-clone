@@ -10,7 +10,6 @@ import ReactFlagsSelect from 'react-flags-select';
 
 
 const Navbar = () => {
-    
     const defaultState = () => {
         if(navMobile){
             document.getElementsByTagName('body')[0].style.overflow = 'scroll';
@@ -19,11 +18,14 @@ const Navbar = () => {
     const [search, setSearch] = useState(false);
     const [subMenu, setSubMenu] = useState(false)
     const [navMobile, setNavMobile] = useState(false)
-    const [cartItem, setCartItem] = useState(10)  
+    // const [cartItem, setCartItem] = useState(10)  
     const [country, setCountry] = useState('US')  
+    const [searchText, setSearchText] = useState('')  
+    const [char, setChar] = useState('')  
 
+    
     // replace cartItem's state with cart context's length
-    console.log(country)
+    //  SearchText will be used to search context
 
     return (
         <nav>
@@ -44,13 +46,29 @@ const Navbar = () => {
                     <h1 className="nav-logo-text">Ghibli Store</h1>
                 </a>
                 <ul className="nav-ul nav-icons">
-                    <form className="search">
+                    <form className="search" onSubmit = {e =>{
+                        e.preventDefault();
+                        setSearchText(char);
+                        setChar('')
+                    }}>
                         <IoIosSearch 
                             className={`nav-link nav-temp nav-icon search-icon search-${search}`}
-                            onClick={()=>setSearch(!search)}
+                            onClick={()=>{
+                                if(!char){
+                                    setSearch(!search)
+                                }
+                                else{
+                                    setSearchText(char);
+                                    setChar('')
+                                }
+                            }}
                         />
                         <input 
                             type="text"
+                            autoFocus = {true}
+                            value = {char}
+                            placeholder={"Search products"}
+                            onChange = {(e) => setChar(e.target.value)}
                             className = {search? 'show-form': 'hide-form'}
                          />
                     </form>
@@ -70,7 +88,7 @@ const Navbar = () => {
             {/* bottom half of navbar */}
             <div id="nav-mobile" className={navMobile? 'nav-show': 'nav-hide'}>
         
-                <ul className="nav-ul">
+                <ul className={`nav-ul mt-${subMenu} `}>
                     <li className="nav-item">
                         Ghibli Movies
                         <span onClick={()=>setSubMenu(!subMenu)} className="nav-sub-toggler"> 
@@ -91,10 +109,6 @@ const Navbar = () => {
                     <li className="nav-item">Apparel</li>
                     <li className="nav-item">Plushies & Figurines</li>
                     <li className="nav-item account">Account</li>
-                    {/* 
-                        <li className="nav-item">gift card</li>
-                        <li className="nav-item">track order</li>
-                    */}
                 </ul>
             </div>
         </nav>

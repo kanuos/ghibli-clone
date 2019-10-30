@@ -1,0 +1,124 @@
+footer{
+    background: var(--black-shadow);
+    min-height: 110vh;
+    padding: 2.5rem 2.1rem;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    justify-content: space-around;
+}
+
+.footer-container,.footer-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-block{
+    margin-bottom: 1.5rem;
+}
+
+.footer-header{
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro';
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-text{
+    text-align: left;
+    font-family: 'Source Sans Pro';
+    color: var(--muted);
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+}
+
+.footer-link,
+.footer-link:link,
+.footer-link:visited{
+    display: block;
+    font-family: 'Source Sans Pro';
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s;
+    padding: .5rem 0;
+}
+
+.footer-link:hover{
+    color: var(--white);
+    cursor: pointer;
+}
+
+.text-center{
+    text-align: center;
+}
+.footer-form{
+    width: 95%;
+    max-width: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.footer-form input{
+    padding: 1.65rem;
+    width: 80%;
+    background: var(--black);
+    border: none;
+}
+.footer-form input::placeholder{
+    font-size: 1.5rem;
+    color: var(--muted);
+}
+
+.footer-form input:focus,
+.footer-form input:active{
+    outline-color: var(--green);
+}
+
+.footer-btn{
+    height: 5rem;
+    width: 4rem;
+    background: var(--green);
+    color: var(--black);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;align-items: center;
+}
+
+.footer-sign{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: .5px solid var(--muted);
+    padding: 2rem 0;
+    font-size: 1.25rem;
+    color: var(--muted);
+    text-transform: capitalize;
+}
+
+.footer-icon{
+    font-size: 3rem;
+}
+
+@media (min-width:750px){
+    footer{
+        min-height: 70vh;
+    }
+    .footer-container{
+        max-width: 120rem;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-block{
+        flex-basis: 25%;
+    }
+    .footer-sign{
+        max-width: 120rem;
+        margin: 2rem auto;
+        font-size: 1rem;
+    }
+}
