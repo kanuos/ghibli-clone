@@ -89,9 +89,9 @@ const Navbar = () => {
             <div id="nav-mobile" className={navMobile? 'nav-show': 'nav-hide'}>
         
                 <ul className={`nav-ul mt-${subMenu} `}>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={()=>setSubMenu(!subMenu)}>
                         Ghibli Movies
-                        <span onClick={()=>setSubMenu(!subMenu)} className="nav-sub-toggler"> 
+                        <span  className="nav-sub-toggler"> 
                         {subMenu? <FaAngleUp/> : <FaAngleDown/>} 
                         </span>
                     </li>

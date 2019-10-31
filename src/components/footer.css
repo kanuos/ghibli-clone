@@ -36,7 +36,7 @@ footer{
 .footer-link,
 .footer-link:link,
 .footer-link:visited{
-    display: block;
+    display: inline-block;
     font-family: 'Source Sans Pro';
     text-decoration: none;
     text-transform: capitalize;

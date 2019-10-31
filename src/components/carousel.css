@@ -1,0 +1,69 @@
+.carousel{
+    height: 45vh;
+    position: relative;
+}
+
+.carousel_img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-text{
+    position: absolute;
+    bottom: 4rem;
+    left: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: 'Open Sans';
+    color: white;
+    padding: .5rem;
+    background: #D8232F;
+    transition: all .2s;
+    animation: appear ease 10s infinite;
+    animation-delay: 1s;
+}
+
+@keyframes appear{
+    0%{
+        transform: translateY(5rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+.carousel-text:hover{
+    background: maroon;
+}
+
+
+@media (min-width:725px){
+    .carousel{
+        margin-top: -4rem;
+    }
+}
+
+@media (min-width:750px){
+    .carousel{
+        height: 72vh;
+    }
+    .carousel-text{
+        position: absolute;
+        bottom: 6rem;
+        left: 4rem;
+        font-size: 3rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width:950px){
+    .carousel{
+        height: 80vh;
+    }
+    .carousel-text{
+        font-size: 4rem;
+    }
+}

@@ -3,6 +3,7 @@ nav{
    flex-direction: column;
    padding: 1rem;
    position: relative;
+   z-index: 10;
 }
 
 .nav-default{
@@ -24,7 +25,7 @@ nav{
 }
 
 .nav-true{
-    margin-left: 32rem;
+    margin-left: 34rem;
     transition: all .2s ease;
     transform-origin: left;
     overflow: hidden;
@@ -220,43 +221,55 @@ nav{
     nav{
         padding: 1rem 2rem;
     }
+    .nav-true{
+        margin-left: 34.5rem;
+    }
 }
 
 @media (min-width:520px){
 .nav-true{
-    margin-left: 35rem;
+    margin-left: 36rem;
+    }
+}
+
+@media (min-width:540px){
+.nav-true{
+    margin-left: 37rem;
     }
 }
 
 @media (min-width:560px){
 .nav-true{
-    margin-left: 37rem;
-    }
-}
-@media (min-width:590px){
-.nav-true{
     margin-left: 38rem;
     }
 }
-@media (min-width:610px){
+@media (min-width:575px){
 .nav-true{
-    margin-left: 39rem;
+    margin-left: 38rem;
+    }
+nav{
+    padding: 1rem 3rem;
+    }
+}
+@media (min-width:585px){
+.nav-true{
+    margin-left: 39.5rem;
     }
 }
 @media (min-width:630px){
-.nav-true{
-    margin-left: 40rem;
-    }
-nav{
-    padding-left: 5rem;
-   }
-}
-@media (min-width:685px){
 .nav-true{
     margin-left: 42rem;
     }
 nav{
     padding-left: 5rem;
+   }
+}
+@media (min-width:680px){
+.nav-true{
+    margin-left: 44rem;
+    }
+nav{
+    padding-left: 7rem;
    }
 }
 @media (min-width:720px){

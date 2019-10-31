@@ -9,20 +9,29 @@ const Footer = () => {
 
                 <article className="footer-block">
                     <h3 className="footer-header">information</h3>
-                    <p className="footer-link footer-text">
-                        contact us
-                    </p>
-                    <p className="footer-link footer-text">
+                    <span className="footer-text">
+                        <span className="footer-link">contact us</span>
+                    </span>
+                    <p className="footer-text">
                         returns & refunds
                     </p>
-                    <p className="footer-link footer-text">
+                    <p className="footer-text">
+                        <span className="footer-link">
                         shipping & delivery
+
+                        </span>
                     </p>
-                    <p className="footer-link footer-text">
+                    <p className="footer-text">
+                        <span className="footer-link">
                         size guide
+
+                        </span>
                     </p>
-                    <p className="footer-link footer-text">
+                    <p className="footer-text">
+                        <span className="footer-link">
                         privacy policy
+
+                        </span>
                     </p>
                 </article>
 
