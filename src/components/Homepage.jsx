@@ -32,7 +32,7 @@ const Homepage = () => {
                         <div className="item-grid">
                             ghibli <br/> spirited away
                         </div>
-                        <p className="home-text u-bold">
+                        <div className="home-text u-bold">
                             100% Secure payments with your favorite payment methods <br/>
                             <ul>
                                 <li>shopify</li>
@@ -42,7 +42,7 @@ const Homepage = () => {
                                 <li>discover </li>
                                 <li>apple pay</li>
                             </ul>
-                        </p>
+                        </div>
                         <div className="item-grid">
                             totoro <br/> princess mononoke
                         </div>

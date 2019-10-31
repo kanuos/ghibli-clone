@@ -5,6 +5,7 @@
   --white: white;
   --muted: #A4A4A4;
   --green: #4ED758;
+  --green-dark: rgb(69, 184, 77);
   --white-shadow: #fafafa;
   --black-shadow: #222222;
 }
@@ -30,6 +31,13 @@ body {
   overflow-x: hidden;
 }
 
+.text-center{
+  text-align: center !important;
+}
+
+.text-left{
+  text-align: left !important;
+}
 
 
 /* "Source Sans Pro","HelveticaNeue","Helvetica Neue",sans-serif; */

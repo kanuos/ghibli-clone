@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css';
-import {FaPaypal} from 'react-icons/fa';
+import {FaPaypal, FaFacebookF, FaInstagram} from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -47,6 +47,10 @@ const Footer = () => {
                 </article>
                 <article className="footer-block">
                     <h3 className="footer-header text-center">follow us</h3>
+                    <p className="footer-text text-center">
+                        <FaFacebookF className="footer-icon footer-link"/>
+                        <FaInstagram className="footer-icon footer-link"/>
+                    </p>
                 </article>
                 <article className="footer-block">
                     <h3 className="footer-header">be in the know</h3>
@@ -61,7 +65,7 @@ const Footer = () => {
             </section>
             <div className="footer-sign">
                 <p className="footer-text--mini">
-                    Not copyrighted. Clone of official Ghibli store
+                    Not copyrighted. Clone of official <span className="footer-link">Ghibli store</span>
                 </p>
                 <FaPaypal className="footer-icon"/>
             </div>

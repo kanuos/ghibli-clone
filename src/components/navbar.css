@@ -220,6 +220,7 @@ nav{
 @media (min-width:500px){
     nav{
         padding: 1rem 2rem;
+        height: 13rem;
     }
     .nav-true{
         margin-left: 34.5rem;
@@ -295,9 +296,9 @@ nav{
     }
     #nav-mobile{
         position: absolute;
-        top: 13rem;
+        top: 12rem;
         left: 0;
-        height: 5rem;
+        height: 6rem;
         width: 100vw;
         background: white;
         border-right: none;

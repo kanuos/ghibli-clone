@@ -32,9 +32,42 @@
     margin-top: 1rem;
 }
 
+.home-search-box{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.home-search, .home-search-btn{
+    padding: 1rem;
+    border: none;
+}
+
+.home-search, .home-search:active{
+    background: buttonface;
+    outline: none;
+}
+
+.home-search:focus{
+    outline: none;
+}
 
 
+.home-search:placeholder-shown{
+    font-family: 'Open Sans';
+}
 
+.home-search-btn{
+    background: var(--green);
+    outline: none;
+    transition: all .2s;
+    cursor: pointer;
+}
+.home-search-btn:hover, .home-search-btn:focus, .home-search-btn:active{
+    background: var(--green-dark);
+    outline: none;
+}
 
 @media (min-width:725px){
     main{
