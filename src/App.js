@@ -3,16 +3,15 @@ import React from 'react';
 import CartContextProvider from './contexts/CartContext';
 // import TestComponent from './components/test';
 import ProductsContextProvider from './contexts/ProductsContext';
-import Shipping from './components/static_pages/Shipping';
+import Cart from './components/Cart';
+
 
 function App() {
   return (
     <ProductsContextProvider >
       <CartContextProvider>
         <div className="App">
-          {/* <Homepage /> */}
-          {/* <TestComponent /> */}
-          <Shipping />
+            <Cart />
         </div>
       </CartContextProvider>
     </ProductsContextProvider>

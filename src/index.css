@@ -8,6 +8,7 @@
   --green-dark: rgb(69, 184, 77);
   --white-shadow: #fafafa;
   --black-shadow: #222222;
+  --white-shadow-light: #f4f4f4;
 }
 
 *,*::after,*::before{
@@ -37,6 +38,138 @@ body {
 
 .text-left{
   text-align: left !important;
+}
+
+
+.static-container{
+  padding: 4rem 2.5rem;
+  width: 90%;
+  min-height: 50vh;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+
+.static-header{
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-family: 'Source Sans Pro';
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bolder;
+}
+
+.static-header--sub{
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  font-family: 'Source Sans Pro';
+  text-align: left;
+  margin: 4rem 0 2rem 0;
+  font-weight: bolder;
+}
+
+.static-text{
+  font-size: 1.5rem;
+}
+
+.static-table{
+  width: 100%;
+  max-width: 750rem;
+  margin: 0 auto;
+}
+
+.static-table-heading {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+.static-table tr{
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.static-table tbody td{
+  font-size: 1.25rem;
+}
+
+.static-btn{
+  display: block;
+}
+.static-form{
+  margin: 1rem 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.static-input, .static-message{
+  padding: 1.2rem 1rem;
+  background: var(--white-shadow-light);
+  border: none;
+  margin: 1.25rem;
+  display: block;
+  width: 100%;
+  outline: none;
+  border-bottom: 1px solid transparent;
+  border-radius: .5rem;
+}
+
+.static-message:active,
+.static-message:focus,
+.static-input:focus,
+.static-input:active{
+  outline: none;
+  border-bottom: 1px solid var(--muted);
+}
+
+.static-message{
+  height: 30rem;
+  resize: none;
+}
+
+.static-btn{
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.25rem;
+  padding: 1rem;
+  width: 100%;
+  margin: 1rem auto;
+  outline: none;
+  border: none;
+  background: var(--green);
+  margin-left: 8px;
+  transition: all .2s;
+  cursor: pointer;
+}
+.static-btn:hover{
+  outline: none;
+  background: var(--green-dark);
+}
+.static-link-box{
+  text-align: center;
+  display: block;
+  padding: .25rem;
+}
+
+.static-link,
+.static-link:link,
+.static-link:visited{
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--green);
+  font-size: 1.25rem;
+  transition: all .2s;
+}
+.static-link:hover{
+  color: var(--green-dark);
+}
+
+@media (min-width:725px){
+  .static-container{
+    padding: 12rem 2.5rem 5rem 2.5rem ;
+  } 
 }
 
 
