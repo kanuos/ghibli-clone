@@ -3,7 +3,8 @@ import React from 'react';
 import CartContextProvider from './contexts/CartContext';
 // import TestComponent from './components/test';
 import ProductsContextProvider from './contexts/ProductsContext';
-import Cart from './components/Cart';
+// import Cart from './components/Cart';
+import ProceedToPayment from './components/static_pages/ProceedToPayment';
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
     <ProductsContextProvider >
       <CartContextProvider>
         <div className="App">
-            <Cart />
+          <ProceedToPayment />
+          {/* <Cart /> */}
         </div>
       </CartContextProvider>
     </ProductsContextProvider>
