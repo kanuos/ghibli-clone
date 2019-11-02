@@ -4,7 +4,7 @@ import {FaPaypal, FaFacebookF, FaInstagram} from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="footer">
             <section className="footer-container">
 
                 <article className="footer-block">

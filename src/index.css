@@ -166,6 +166,233 @@ body {
   color: var(--green-dark);
 }
 
+.payment{
+  padding: 1rem;
+}
+
+.payment-info{
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-nav{
+  height: 8rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1.5px solid var(--white-shadow-light);
+}
+.payment-logo{
+  display: block;
+  height: 8rem;
+  width: 8rem;
+}
+.payment-logo-text{
+  color: var(--muted);
+}
+.payment-detail{
+  height: 7rem;
+  font-size: 2rem;
+  padding: 3rem 1rem;
+  outline: none;
+  transition: all .2s;
+  margin-bottom: 3rem;
+
+}
+
+.payment-detail[open]{
+  height: auto;
+  transition: all .3s;
+  outline: none;
+}
+.payment-expand{
+  padding-top : 3rem ;
+}
+.payment-summary{
+  outline: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.payment-summary span{
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.payment-summary span:last-of-type{
+  margin-left: auto;
+}
+.payment-thumbnail-badge{
+  position: relative;
+}
+.payment-line{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--muted);
+}
+.payment-thumnail{
+  display: block;
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+  margin: 1rem;
+  clip-path: circle(50%);
+}
+.payment-sub-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.payment-sub-amt{
+  font-size: 1.25rem;
+  margin-left: auto;
+  font-weight: bold;
+}
+.payment-badge{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.1rem .5rem;
+  display: block;
+  background: var(--green);
+  color: var(--white);
+  font-size: 1.25rem;
+  clip-path: circle(50%);
+}
+
+.payment-input{
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  outline: none;
+  background: var(--white-shadow-light);
+  flex-basis: 85%;
+}
+.payment-input:placeholder-shown{
+  text-transform: capitalize;
+  caret-color: var(--muted);
+}
+
+.coupon-btn {
+  height: 100%;
+  flex-basis: 15%;
+  align-self: flex-start;
+  padding: 1rem 0;
+  background: var(--green);
+  color: var(--black);
+  filter: blur(50%);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.coupon-btn:hover {
+  background: var(--green-dark);
+  }
+.payment-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  width: 100%;
+}
+.payment-text{
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+.express-checkout{
+  height: 12rem;
+  width: 100%;
+  border: 1.5px solid var(--white-shadow-light);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.legend{
+  position: absolute;
+  top: -1.5rem;
+  font-size: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: capitalize;
+  padding: .5rem;
+  background: var(--white);
+  color: var(--muted);
+  font-weight: bolder;
+}
+.paypal{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 10rem;
+  background-color: var(--green);
+  color: var(--black);
+  font-weight: bolder;
+  border: none;
+  outline: none;
+  transition: all .3s;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+.paypal:hover{
+  background: var(--green-dark);
+}
+.muted-caps{
+  margin: 4rem 0;
+  width: 100%;
+  position: relative;
+  height: 2px;
+  background: var(--white-shadow-light);
+}
+.protected-transaction{
+  width: 100%;
+}
+.payment-heading{
+  font-size: 1.75rem;
+  font-weight: lighter;
+  padding-left: 1rem;
+}
+.payment-input-check{
+  display: flex;
+  justify-content: flex-start;
+  margin-right: auto;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.payment-select{
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: var(--white-shadow);
+  border: 1px solid var(--white-shadow-light);
+  outline: 1px solid transparent;
+}
+.payment-select:focus{
+  outline: 1px solid var(--muted);
+}
+.payment-cta{
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 2rem .5rem;
+  color: var(--white);
+  background: var(--green-dark);  
+  font-size: 1.5rem;
+  outline: none;
+  border-radius: 1rem;
+  margin: 2rem auto;
+}
 @media (min-width:725px){
   .static-container{
     padding: 12rem 2.5rem 5rem 2.5rem ;

@@ -6,6 +6,7 @@ export const CartContext = createContext()
 const CartContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState([])
+    const [specialInstruction, setSpecialInstruction] = useState("")
 
     const itemPresentInCart = (new_item) =>{
         const presentInCart = cartItems.filter(item =>{
@@ -77,7 +78,9 @@ const CartContextProvider = (props) => {
                 addNewItem,
                 removeItem,
                 cartTotal,
-                updateItemQuantity
+                updateItemQuantity,
+                setSpecialInstruction,
+                specialInstruction
             }
         }>
             {props.children}

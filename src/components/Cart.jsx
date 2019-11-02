@@ -86,15 +86,15 @@ const Cart = () => {
                     </h3>
                 </article>
 
-
-
-
-
-
-
             </section>
             </div>
             <Footer />
+                {/* special instructions for seller */}
+                {/* textarea which sends form data to checkout component */}
+                {/* $69.90 USD  next line shipping and taxes calculated at checkout */}
+                {/* link to checkout */}
+                {/* you may also like ....  */}
+                {/* related items of current article item <5 items>  */}
         </div>
     )
 }
