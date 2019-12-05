@@ -71,6 +71,7 @@ nav{
     border-right: 1px solid var(--muted);
     transition: all .3s;
     transform-origin: left;
+    padding-top: 4rem;
 }
 
 .nav-hide{

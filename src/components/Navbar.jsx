@@ -79,7 +79,7 @@ const Navbar = () => {
                         className = "country"
                         defaultCountry={country} 
                         countries={["US","IN","JP"]} 
-                        customLabels = {{"US":"USA", "IN":"INDIA","JP":"JAPAN"}}
+                        customLabels = {{"US":"USD", "IN":"INR","JP":"YEN"}}
                         onSelect = {(country)=>setCountry(country)}
                         />                   
                 </ul>
