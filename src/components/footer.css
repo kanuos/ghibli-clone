@@ -60,9 +60,10 @@
 
 .footer-form input{
     padding: 1.65rem;
-    width: 80%;
+    width: 100%;
     background: var(--black);
     border: none;
+    margin-left: -1rem;
 }
 .footer-form input::placeholder{
     font-size: 1.5rem;

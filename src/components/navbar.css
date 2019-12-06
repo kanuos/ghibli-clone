@@ -132,6 +132,7 @@ nav{
 }
 
 .mt-true{
+    display: inline-block;
     margin-top: 12rem;
 }
 .mt-false{
@@ -172,9 +173,27 @@ nav{
     cursor: pointer;
 }
 
-.search{
+.search, .cart{
     position: relative;
 }
+.cart-icon{
+    fill: var(--muted);
+    transition: fill .3s;
+}
+.cart-icon:hover{
+    fill: var(--black-shadow);
+}
+
+.cart-full{
+    position: absolute;
+    top: -12%;
+    left: 45%;
+    height: 1.15rem;
+    width: 1.15rem;
+    border-radius: 50%;
+    background: red;
+}
+
 
 
 .expand-true .nav-item{
@@ -297,9 +316,9 @@ nav{
     }
     #nav-mobile{
         position: absolute;
-        top: 12rem;
+        top: 11rem;
         left: 0;
-        height: 6rem;
+        height: 9rem;
         width: 100vw;
         background: white;
         border-right: none;
@@ -370,7 +389,7 @@ nav{
         opacity: 1;
         position: absolute;
         padding: 1rem;
-        top: 4.7rem;
+        top: 8.7rem;
         left: 0;
         width: 100%;
         display: flex;

@@ -3,18 +3,21 @@ import React from 'react';
 import CartContextProvider from './contexts/CartContext';
 import ProductsContextProvider from './contexts/ProductsContext';
 import ProductPage from './components/ProductPage';
+import CurrencyContextProvider from './contexts/CurrencyContext';
 
 
 function App() {
   return (
-    <ProductsContextProvider >
-      <CartContextProvider>
-        <div className="App">
-          {/* <Homepage /> */}
-          <ProductPage />
-        </div>
-      </CartContextProvider>
-    </ProductsContextProvider>
+    <CurrencyContextProvider>
+      <ProductsContextProvider >
+        <CartContextProvider>
+          <div className="App">
+            {/* <Homepage /> */}
+            <ProductPage />
+          </div>
+        </CartContextProvider>
+      </ProductsContextProvider>
+    </CurrencyContextProvider>
   );
 }
 

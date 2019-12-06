@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import './navbar.css';
 import totoro from '../assets/nav-logo.jpg';
 import { FaAngleDown, FaAngleUp} from 'react-icons/fa';
@@ -7,6 +7,9 @@ import {IoIosSearch} from 'react-icons/io';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import 'react-flags-select/css/react-flags-select.css';
 import ReactFlagsSelect from 'react-flags-select';
+
+import { CurrencyContext } from '../contexts/CurrencyContext';
+import { CartContext } from '../contexts/CartContext';
 
 
 const Navbar = () => {
@@ -23,7 +26,9 @@ const Navbar = () => {
     const [searchText, setSearchText] = useState('')  
     const [char, setChar] = useState('')  
 
-    
+    const {...cart} = useContext(CartContext);
+    const {...context} =  useContext(CurrencyContext);
+
     // replace cartItem's state with cart context's length
     //  SearchText will be used to search context
 
@@ -73,14 +78,19 @@ const Navbar = () => {
                          />
                     </form>
                     <span className="cart">
-                        <MdShoppingCart className="nav-link nav-icon"/>
+                        {console.log(context.data)}
+                        {cart.data.length>0 && <span className="cart-full">&nbsp;</span>}
+                        <MdShoppingCart className="nav-link nav-icon cart-icon" />
                     </span>
                     <ReactFlagsSelect 
                         className = "country"
                         defaultCountry={country} 
                         countries={["US","IN","JP"]} 
                         customLabels = {{"US":"USD", "IN":"INR","JP":"YEN"}}
-                        onSelect = {(country)=>setCountry(country)}
+                        onSelect = {(country)=>{
+                            setCountry(country);
+                            context.getCurrency(country);
+                        }}
                         />                   
                 </ul>
             </div>

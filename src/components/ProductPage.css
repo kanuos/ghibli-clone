@@ -1,12 +1,12 @@
 .product-container{
     min-height: 100vh;
-    padding: 2rem;
+    padding: 1rem;
+    margin-top: -1rem;
 }
 
 .product-img{
     display: block;
-    height: 50rem;
-    width: 90%;
+    width: 70%;
     margin: 1rem auto;
     object-fit: cover;
 }
@@ -97,6 +97,7 @@
     background: var(--green);
     font-weight: bolder;
     text-transform: uppercase;
+    font-size: 1.25rem;
     border: none;
     transition: all .3s;
     cursor: pointer;
@@ -179,10 +180,13 @@ button.update-btn:hover{
     align-items: center;
 }
 .product-desc-key, .product-def{
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
 }
-
+.product-def{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 .review{
     display: flex;
     flex-direction: column;
@@ -195,5 +199,185 @@ button.update-btn:hover{
     justify-content: flex-start;
 }
 .verify{
-    margin-right: .5rem;
+    margin: .5rem 0;
+    text-transform: capitalize;
+    color: var(--green-hover);
+    font-weight: normal;
+}
+
+.product-text{
+    font-size: 1.25rem;
+    display: inline-block;
+    margin: 1rem;
+}
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    max-width: 70rem;
+    flex-wrap: wrap;
+}
+
+.card-container-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+.card, .frequent-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid #ccc;
+    cursor: pointer;
+    padding: .5rem;
+    transition: all .3s;;
+    position: relative;
+    margin: .5rem;
+    border-radius: 1rem;
+    flex-basis: 30%;
+    max-width: 20rem;
+}
+
+.frequent-card img{
+    filter: sepia(.5);
+    clip-path: circle(50%);
+}
+
+.frequent-card button{
+    width: 70%;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.card span{
+    font-style: oblique;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+}
+
+.card-title{
+    color: var(--green-hover);
+    font-weight: bolder;
+    font-size: 1.75rem;
+    margin: 1rem auto;
+}
+
+span.cancel{
+    text-decoration: line-through;
+    font-weight: lighter;
+    color: var(--black-shadow);
+}
+
+.card-img-box{
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 1.25rem;
+}
+
+.card-img{
+    display: block;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    transition: all .3s;
+}
+.card:hover .card-img{
+    filter: sepia(0);
+}
+.card:hover{
+    box-shadow: 0 2px 1rem rgba(0,0,0,.35);
+}
+.single-line{
+    width: 90%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-price {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--green);
+}
+
+.single-line .cancel{
+    font-size: 1.15rem;
+}
+
+
+
+/* media queries */
+
+
+@media (min-width:725px){
+    .product-container{
+        padding-top: 15rem;
+        max-width: 110rem;
+        margin: auto;
+        margin-bottom: 1.5rem;
+        margin-top: -2rem;
+    }
+    .product-img{
+        display: block;
+        width: 60%;
+        margin: 1rem auto;
+        object-fit: cover;
+    }    
+}
+
+
+@media (min-width:750px){    
+    .product-wrapper{
+        padding: 1rem;
+        padding-top: 3.5rem;
+        display: grid;
+        gap: .5rem;
+        width: 100%;
+        grid-template-columns: minmax(8rem, 1fr) 3fr 2fr;
+        grid-template-rows: repeat(autofit, 6, auto);
+        vertical-align: top;
+    }
+        
+    .product-img{
+        grid-column: 2/2;
+        grid-row: 1/-1;
+        width: 94%;
+        height: 90%;
+        object-fit: cover;
+        max-width: 50rem;
+    }
+
+    .product-thumbnail-container{
+        grid-column: 1/1;
+        grid-row: 1/1;
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        align-items: center;
+        justify-content: stretch;
+    }
+    .product-detail{
+        grid-column: 3/3;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
+        width: 100%;
+    }
+    .product-social{
+        border-bottom: none;
+    }
+    .product-title-sub{
+        margin-left: 1.25rem;
+    }
+    
+}
+
+@media (min-width:1000px){
+    .product-wrapper{
+        padding: 3.5rem 1rem 1rem 1rem;
+    }
 }

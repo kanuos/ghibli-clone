@@ -80,7 +80,8 @@ const CartContextProvider = (props) => {
                 cartTotal,
                 updateItemQuantity,
                 setSpecialInstruction,
-                specialInstruction
+                specialInstruction,
+                itemPresentInCart
             }
         }>
             {props.children}
