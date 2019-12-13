@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import {NavLink, Link, Redirect} from 'react-router-dom';
 import './navbar.css';
 import totoro from '../assets/nav-logo.jpg';
 import { FaAngleDown, FaAngleUp} from 'react-icons/fa';
@@ -13,6 +14,10 @@ import { CartContext } from '../contexts/CartContext';
 
 
 const Navbar = () => {
+    
+    const {...cart} = useContext(CartContext);
+    const {...context} =  useContext(CurrencyContext);
+    
     const defaultState = () => {
         if(navMobile){
             document.getElementsByTagName('body')[0].style.overflow = 'scroll';
@@ -21,16 +26,11 @@ const Navbar = () => {
     const [search, setSearch] = useState(false);
     const [subMenu, setSubMenu] = useState(false)
     const [navMobile, setNavMobile] = useState(false)
-    // const [cartItem, setCartItem] = useState(10)  
-    const [country, setCountry] = useState('US')  
+    const [country, setCountry] = useState(context.data)  
     const [searchText, setSearchText] = useState('')  
     const [char, setChar] = useState('')  
 
-    const {...cart} = useContext(CartContext);
-    const {...context} =  useContext(CurrencyContext);
-
-    // replace cartItem's state with cart context's length
-    //  SearchText will be used to search context
+    
 
     return (
         <nav>
@@ -46,15 +46,18 @@ const Navbar = () => {
                         {navMobile? <span className="nav-close">&times;</span>: <><GiHamburgerMenu/> Menu</>}
                 </span>
 
-                <a href="/" className="nav-logo-box">
-                    <img src={totoro} alt="Ghibli Store Logo" className="nav-logo"/>
-                    <h1 className="nav-logo-text">Ghibli Store</h1>
-                </a>
+                <article className="nav-logo-box">
+                    <Link to="/">
+                        <img src={totoro} alt="Ghibli Store Logo" className="nav-logo"/>
+                    </Link>
+                        <h1 className="nav-logo-text">Ghibli Store</h1>
+                </article>
                 <ul className="nav-ul nav-icons">
                     <form className="search" onSubmit = {e =>{
                         e.preventDefault();
                         setSearchText(char);
-                        setChar('')
+                        setChar('');
+                        defaultState();
                     }}>
                         <IoIosSearch 
                             className={`nav-link nav-temp nav-icon search-icon search-${search}`}
@@ -66,22 +69,23 @@ const Navbar = () => {
                                     setSearchText(char);
                                     setChar('')
                                 }
+                                defaultState();
+
                             }}
                         />
                         <input 
                             type="text"
                             autoFocus = {true}
                             value = {char}
-                            placeholder={"Search products"}
+                            placeholder={"Search Movie Name"}
                             onChange = {(e) => setChar(e.target.value)}
                             className = {search? 'show-form': 'hide-form'}
                          />
                     </form>
-                    <span className="cart">
-                        {console.log(context.data)}
+                    <Link to = '/mycart' className="cart">
                         {cart.data.length>0 && <span className="cart-full">&nbsp;</span>}
                         <MdShoppingCart className="nav-link nav-icon cart-icon" />
-                    </span>
+                    </Link>
                     <ReactFlagsSelect 
                         className = "country"
                         defaultCountry={country} 
@@ -94,6 +98,8 @@ const Navbar = () => {
                         />                   
                 </ul>
             </div>
+            
+
 
             {/* bottom half of navbar */}
             <div id="nav-mobile" className={navMobile? 'nav-show': 'nav-hide'}>
@@ -106,21 +112,31 @@ const Navbar = () => {
                         </span>
                     </li>
                     <div className={`expand-${subMenu}`}>
-                            <li className="nav-item">my neighbor totoro</li>
-                            <li className="nav-item">Ponyo</li>
-                            <li className="nav-item">Spirited away</li>
-                            <li className="nav-item">princess mononoko</li>
-                            <li className="nav-item">howls moving castle</li>
-                            <li className="nav-item">laputa castkel in the sky</li>
-                            <li className="nav-item">kikis delivery service</li>
-                            <li className="nav-item">the wind rises </li>
+                            <NavLink to="/movie/totoro" className="nav-item">my neighbor totoro</NavLink>
+                            <NavLink to="/movie/ponyo" className="nav-item">Ponyo</NavLink>
+                            <NavLink to="/movie/spirited" className="nav-item">Spirited away</NavLink>
+                            <NavLink to="/movie/mononoke" className="nav-item">princess mononoko</NavLink>
+                            <NavLink to="/movie/howls" className="nav-item">howls moving castle</NavLink>
+                            <NavLink to="/movie/laputa" className="nav-item">laputa castle in the sky</NavLink>
+                            <NavLink to="/movie/kiki" className="nav-item">kikis delivery service</NavLink>
+                            <NavLink to="/movie/the_wind_rises" className="nav-item">the wind rises </NavLink>
                     </div>
-                    <li className="nav-item">Accessories</li>
-                    <li className="nav-item">Apparel</li>
-                    <li className="nav-item">Plushies & Figurines</li>
-                    <li className="nav-item account">Account</li>
+                    <NavLink activeClassName = "active" to="/category/acc" onClick={()=>{
+                        setNavMobile(!navMobile);
+                        defaultState();
+                        }} className="nav-item">Accessories</NavLink>
+                    <NavLink activeClassName="active" to="/category/app" onClick={()=>{
+                        setNavMobile(!navMobile);
+                        defaultState();
+                        }} className="nav-item">Apparel</NavLink>
+                    <NavLink activeClassName="active" to="/category/pf" onClick={()=>{
+                        setNavMobile(!navMobile);
+                        defaultState();
+                        }} className="nav-item">Plushies & Figurines</NavLink>
+                    <NavLink activeClassName="active" to='/account/login' className="nav-item account">Account</NavLink>
                 </ul>
             </div>
+            {searchText && <Redirect to={`/movie/${searchText}`} />}
         </nav>
     )
 }

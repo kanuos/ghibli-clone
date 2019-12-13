@@ -3,7 +3,7 @@ import React, {createContext,useState} from 'react'
 export const CurrencyContext = createContext()
 
 const CurrencyContextProvider = props => {
-    const [currency, setCurrency] = useState(['USD']);
+    const [currency, setCurrency] = useState('US');
 
     const getCurrency = (item) =>{
         setCurrency(item);
@@ -26,7 +26,7 @@ const CurrencyContextProvider = props => {
     }
 
     const context = {
-        data: [...currency],
+        data: currency,
         getCurrency,
         rateConverter,
         currencyConverter

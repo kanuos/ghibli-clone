@@ -28,7 +28,9 @@
 
 .home-container{
     min-height: 100vh;
-    padding: 2rem;
+    max-width: 100rem;
+    margin: auto;
+    padding: 2rem 1rem;
     margin-top: 1rem;
 }
 
@@ -69,6 +71,120 @@
     outline: none;
 }
 
+.home-grid-container, .home-grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2rem 0;
+}
+.home-grid-container{
+    flex-direction: column;
+}
+
+.grid-block{
+    width: 23rem;
+    height: 30rem;
+    /* border: 2px solid red; */
+    /* flex-basis: 20rem; */
+}
+.grid-main{
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 1rem; */
+}
+
+.grid-main img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(80%);
+    transition: all .4s ease-in;
+}
+
+.grid-main img:hover{
+    filter: brightness(60%);
+    transform: scale(1.05);
+}
+
+.grid-label, .view-all{
+    position: absolute;
+}
+
+.grid-label{
+    display: flex;
+    bottom: 6rem;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    background: var(--green);
+    color: var(--black);
+    padding: .5rem;
+    width: 70%;
+    transition: all .3s ease-in-out;
+}
+
+.grid-main >img:hover + .grid-label{
+    background: var(--green-hover);   
+}
+.view-all{
+    bottom: 3.5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 0 .5rem;
+    font-size: 1.5rem;
+}
+
+.home-grid-advertisement{
+    height: 13rem;
+    width: 100%;
+    max-width: 90rem;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.home-grid-advertisement h3{
+    font-size: 1.55rem;
+    color:var(--black);
+    font-weight: bolder;
+}
+
+.home-grid-advertisement img{
+    height: 4rem;
+    width: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.ghibli-slogan{
+    display: flex;
+    width: 90%;
+    max-width: 100rem;
+    margin: 4rem auto 2rem auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.slogan-text{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.slogan{
+    font-size: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ghibli-slogan p{
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
 @media (min-width:725px){
     main{
         margin-top: 9rem;
@@ -76,5 +192,29 @@
     }
     .sale{
         transform: translateY(-4rem);;
+    }
+}
+
+@media (min-width:800px){
+    .ghibli-slogan{
+        height: 35rem;
+        display: grid;
+        grid-template-rows: 5rem 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .ghibli-slogan-img{
+        grid-row: 1/-1;
+        grid-column: 1/1;
+        display: block;
+        margin: 0 auto;
+    }
+    .slogan{
+        grid-row: 1/1;
+        grid-column: 2/-1;
+    }
+    .slogan-text{
+        grid-row: 2/2;
+        grid-column: 2/-1;
+        height: 100%;
     }
 }

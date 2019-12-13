@@ -1,5 +1,6 @@
 //  static login page
 import React from 'react';
+import {Link} from 'react-router-dom'
 import Navbar from '../Navbar';
 import Footer from '../Footer'
 
@@ -17,7 +18,7 @@ const AccountForgetPwd = () => {
                     <button className="static-btn">Submit</button>
                 </form>
                 <div className="static-link-box">
-                    <a href="#" className="static-link">cancel</a>
+                    <Link to="/" className="static-link">cancel</Link>
                 </div>
             </div>
             <Footer />

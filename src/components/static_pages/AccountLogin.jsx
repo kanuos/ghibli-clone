@@ -1,5 +1,6 @@
 //  static login page
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 import Footer from '../Footer'
 
@@ -15,10 +16,10 @@ const AccountLogin = () => {
                     <button className="static-btn">Sign In</button>
                 </form>
                 <div className="static-link-box">
-                    <a href="#" className="static-link">forgot your password?</a>
+                    <Link to="/account/reset" className="static-link">forgot your password?</Link>
                 </div>
                 <div className="static-link-box">
-                    <a href="#" className="static-link">Create account</a>
+                    <Link to="/account/register" className="static-link">Create account</Link>
                 </div>
             </div>
             <Footer />

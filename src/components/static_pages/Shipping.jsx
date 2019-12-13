@@ -18,8 +18,7 @@ const Shipping = () => {
 
                 <h4 className="static-header--sub">how do you ship packages?</h4>
                 <p className="static-text">
-                <p>Packages from our warehouse in China will be shipped by ePacket or EMS depending on the weight and size of the product.</p>
-                </p>
+                Packages from our warehouse in China will be shipped by ePacket or EMS depending on the weight and size of the product.</p>
 
                 <h4 className="static-header--sub">do you ship worldwide?</h4>
                 <p className="static-text">

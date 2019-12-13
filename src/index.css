@@ -17,6 +17,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', 'Roboto';
+  outline: none;
+}
+
+*:focus{
+  color: var(--black) !important;
+  font-weight: bolder !important;
 }
 
 html{

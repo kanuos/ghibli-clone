@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 import Footer from '../Footer'
 
@@ -16,7 +17,7 @@ const AccountRegister = () => {
                     <button className="static-btn">Create</button>
                 </form>
                 <div className="static-link-box">
-                    <a href="#" className="static-link">Already have an Account? Login</a>
+                    <Link to="/account/login" className="static-link">Already have an Account? Login</Link>
                 </div>
             </div>
             <Footer />

@@ -21,12 +21,13 @@ const CartContextProvider = (props) => {
         },0)
     }
 
-    const addNewItem = new_item =>{
+    const addNewItem = (new_item, qty =1) =>{
         // check if item already in cart
         const presentInCart = itemPresentInCart(new_item)
 
         if(!presentInCart.length){
-            new_item.quantity = 1;
+            new_item.quantity = qty;
+            new_item.timeAdded = new Date().getTime();
             setCartItems([...cartItems, new_item])
         }
     }

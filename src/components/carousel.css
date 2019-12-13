@@ -21,7 +21,7 @@
     padding: .5rem;
     background: #D8232F;
     transition: all .2s;
-    animation: appear ease 10s infinite;
+    animation: appear ease 9s infinite;
     animation-delay: 1s;
 }
 

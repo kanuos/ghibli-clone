@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom'
 import './footer.css';
 import {FaPaypal, FaFacebookF, FaInstagram} from 'react-icons/fa';
 
@@ -10,28 +11,28 @@ const Footer = () => {
                 <article className="footer-block">
                     <h3 className="footer-header">information</h3>
                     <span className="footer-text">
-                        <span className="footer-link">contact us</span>
+                        <Link to="/static/contact" className="footer-link">contact us</Link>
                     </span>
-                    <p className="footer-text">
+                    <Link to="/static/refund" className="footer-text footer-link">
                         returns & refunds
-                    </p>
+                    </Link>
                     <p className="footer-text">
-                        <span className="footer-link">
+                        <Link to="/static/shipping" className="footer-link">
                         shipping & delivery
 
-                        </span>
+                        </Link>
                     </p>
                     <p className="footer-text">
-                        <span className="footer-link">
+                        <Link to="/static/size" className="footer-link">
                         size guide
 
-                        </span>
+                        </Link>
                     </p>
                     <p className="footer-text">
-                        <span className="footer-link">
+                        <Link to="/static/terms" className="footer-link">
                         privacy policy
 
-                        </span>
+                        </Link>
                     </p>
                 </article>
 
